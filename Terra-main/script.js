@@ -1,11 +1,23 @@
 const startButton = document.querySelector("#startButton")
 const questionFrame = document.querySelector("#questionFrame")
+const yesButton = document.querySelector("#yesButton")
+const noButton = document.querySelector("#noButton")
+const progressBar = document.querySelector(".progress-bar")
+let selectedQuestion
+let usedNpc
+let points = {
+    "poobert": 0,
+    "blargh": 0,
+    "heidi": 0,
+    "ratticus": 0,
+    "player": 0
 
+}
 
 let list = ["Are you helpful", "Are you slightly silly", "Are you a yapper", "Are you a Blåhaj", "Do you have best fit", "Are you blunt", "Are you kind",
      "Do you love your plants and your trash", "Do you say haii!", "Do you use only CAPS", "Are you goblin", "Do you have tom nook vibes", "Are you quiet and always thinking"
     , "Are you slightly lost", "Are you whimsical"]
-const npcQuestions = {
+let npcQuestions = {
     "Are you helpful":{
         "answered": false,
         "npc": "poobert"
@@ -87,12 +99,51 @@ function takeRandomQuestion ()   {
     
 }
 
-startButton.addEventListener("click",  (event) =>{
+function ShowNextQuestion(){
     console.log("Next question!")
     selectedQuestion = takeRandomQuestion()
     if (selectedQuestion == undefined){
         console.log("All questions asked!")
+    }else{
+        document.querySelector("#question").innerHTML = selectedQuestion + "?"
+
     }
-    document.querySelector("#question").innerHTML = selectedQuestion + "?"
+    
+}
+
+
+yesButton.addEventListener("click", (event) =>{
+    console.log("Next question! Answered yes")
+    answered("yes")
+
+})
+
+noButton.addEventListener("click", (event) =>{
+    console.log("Next question! Answered no")
+    answered("no")
     
 })
+
+function answered(answer) {
+    if (answer == "yes"){
+        console.log(npcQuestions[selectedQuestion].npc, "Here")
+        usedNpc = npcQuestions[selectedQuestion].npc
+        points[usedNpc] =+ 1
+        console.log(points)
+    }
+
+    ShowNextQuestion()
+    progressBarUpdate()
+    
+}
+
+let progressBarVal = 0
+
+function progressBarUpdate(){
+    progressBarVal = progressBarVal + 6.66666
+    progressBar.style.width =  progressBarVal +"%"
+
+}
+
+
+ShowNextQuestion()
