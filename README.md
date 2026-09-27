@@ -14,7 +14,7 @@ I got all the questions to this quiz from the reel.
 I used AI to fix problems with the code and not to create the code. All the code has been checked by human
 
 ## I want to see this project with my own eyes
-Just go to ..
+Just go to https://fatsermint.github.io/Terra-npc/home.html
 
 ## Is there any bugs?
 I haven't found any bugs but its still possible that there is.
