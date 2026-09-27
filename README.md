@@ -2,7 +2,7 @@
 ## Website that asks you questions and then gives answer which Terra's npc you are closest to
 
 ## What was the inspiration to this project
-I saw a reel from the official terra.hackclub Instagram account.
+I saw a reel from the official terra.hackclub Instagram account. The reel was about the npcs in Terra
 
 ## This project is made to Terra
 I made this project for Hackclub's ysws called Terra. To learn more about Terra go check out terra.hackclub.com
