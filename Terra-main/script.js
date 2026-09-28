@@ -166,15 +166,12 @@ function showResults() {
     if (winners.length === 0) {
         showWinner("Nobody");
     } else if (winners.length > 1) {
-        bonusQuestion(winners);
+        showWinner(winners);
     } else {
         showWinner(winners[0]);
     }
 }
 
-function bonusQuestion(winners) {
-    console.log("bonus", winners)
-}
 
 function showWinner(winner) {
     console.log(winner, "winner");
