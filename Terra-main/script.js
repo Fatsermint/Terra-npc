@@ -150,31 +150,31 @@ function progressBarUpdate() {
 ShowNextQuestion()
 
 function showResults() {
-    let highestScore = -1;
-    let winners = [];
+    let highestScore = -1
+    let winners = []
 
 
     Object.entries(points).forEach(([character, characterPoints]) => {
         if (characterPoints > highestScore) {
-            highestScore = characterPoints;
-            winners = [character]; 
+            highestScore = characterPoints
+            winners = [character]
         } else if (characterPoints === highestScore && characterPoints > 0) {
-            winners.push(character); 
+            winners.push(character)
         }
     });
 
     if (winners.length === 0) {
-        showWinner("Nobody");
+        showWinner("Nobody")
     } else if (winners.length > 1) {
-        showWinner(winners);
+        showWinner(winners)
     } else {
-        showWinner(winners[0]);
+        showWinner(winners[0])
     }
 }
 
 
 function showWinner(winner) {
-    console.log(winner, "winner");
-    document.querySelector("#hideAll").style.display = "none";
-    document.querySelector("#winner").innerHTML = `You are ${winner}!`;
+    console.log(winner, "winner")
+    document.querySelector("#hideAll").hidden = true
+    document.querySelector("#winner").innerHTML = `You are ${winner}!`
 }
